@@ -1,0 +1,13 @@
+.words {
+    background-color: beige;
+    margin: 5px;
+    top: 5px;
+    margin: 5px;
+    width: 150px;
+    align-items: center;
+    text-align: center;
+}
+
+.btn-delete {
+    border-radius: 10px;
+}

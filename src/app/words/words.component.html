@@ -1,0 +1,29 @@
+<div *ngIf="isShowFrom">
+<input placeholder="English"[(ngModel)]="newEn"/><br>
+<input placeholder="Vietnamese"[(ngModel)]="newVn"/>
+<br><br>
+<button (click)="addWord();">Thêm Từ Mới</button>
+</div>
+<button (click)="isShowFrom = true" *ngIf="!isShowFrom" >
+    Thêm Từ Mới
+</button>
+<br>
+<select [(ngModel)]="filterStatus">
+    <option value="Xem_Tat_Ca">Xem Tất Cả </option>
+    <option value="Xem_Da_Nho">Xem Từ Đã Nhớ </option>
+    <option value="Xem_Chua_Nho">Xem Từ Chưa Nhớ </option>
+</select>
+
+<div *ngFor="let word of arrWords" class="words">
+    <div class="word" *ngIf="getShowStatus(word.memorized)">
+
+    <h4 [ngStyle]="{color:word.memorized ? 'green':'red'}"> 
+        {{word.en}} 
+    </h4>
+    <p> {{word.vn}} </p>
+<button class="btn-delete" (click)="removeWord(word.id);">Xóa</button>
+<button class="btn-delete" (click)="word.memorized =!word.memorized">
+    {{word.memorized ? 'chưa thuộc': 'đã thuộc'}}
+</button>
+</div>
+</div>

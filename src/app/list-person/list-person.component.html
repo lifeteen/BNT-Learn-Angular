@@ -1,0 +1,8 @@
+<ng-container *ngFor="let person of arrPeople">
+    <app-person 
+    [name]="person.name" 
+    [age]="person.age"
+    (removePerson)="removePersonByName($event)">
+</app-person>
+</ng-container>
+<!--ng-container là một group element mà không có chứa bất kì 1 style css nào-->0
