@@ -13,7 +13,8 @@ import { PersonComponent } from './person/person.component';
 import { ListPersonComponent } from './list-person/list-person.component';
 import {ParentComponet} from'./parent.componet' ;
 import {ChildComponent} from'./child.component';
-
+import { CardComponent } from './card.componet';
+import { LearnPipeComponent } from './learn-pipe/learn-pipe.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,8 @@ import {ChildComponent} from'./child.component';
     ListPersonComponent,
     ParentComponet,
     ChildComponent,
+    CardComponent,
+    LearnPipeComponent,
   ],
   imports: [
     BrowserModule,
