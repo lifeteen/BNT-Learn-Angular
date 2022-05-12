@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule} from '@angular/forms'
+import { FormsModule} from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +16,10 @@ import {ParentComponet} from'./parent.componet' ;
 import {ChildComponent} from'./child.component';
 import { CardComponent } from './card.componet';
 import { LearnPipeComponent } from './learn-pipe/learn-pipe.component';
+import {RoundPipe} from './round.pipe';
+import {IpComponent } from "./ip.component";
+
+import {IPService} from './ip.service'
 
 @NgModule({
   declarations: [
@@ -30,13 +35,16 @@ import { LearnPipeComponent } from './learn-pipe/learn-pipe.component';
     ChildComponent,
     CardComponent,
     LearnPipeComponent,
+    RoundPipe,
+    IpComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [IPService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
